@@ -1,35 +1,508 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZOON</title>
+
 <style>
-body{
+*{
 margin:0;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-background:#fff;
+padding:0;
+box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
-.logo{
-width:180px;
-height:180px;
-background:#0066ff;
-border-radius:30px;
+
+body{
+background:#f9f9f9;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+right:0;
+height:65px;
+background:#ffffff;
 display:flex;
-justify-content:center;
 align-items:center;
-font-size:90px;
+justify-content:space-between;
+padding:0 20px;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+z-index:1000;
+}
+
+.logo{
+font-size:32px;
 font-weight:bold;
+color:#0066ff;
+}
+
+.search{
+display:flex;
+width:45%;
+}
+
+.search input{
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:30px 0 0 30px;
+outline:none;
+}
+
+.search button{
+padding:12px 20px;
+border:none;
+background:#0066ff;
+color:white;
+border-radius:0 30px 30px 0;
+cursor:pointer;
+}
+
+.login{
+background:#0066ff;
+color:white;
+padding:10px 20px;
+border-radius:25px;
+cursor:pointer;
+}
+
+.sidebar{
+position:fixed;
+top:65px;
+left:0;
+width:220px;
+height:100%;
+background:white;
+padding-top:20px;
+box-shadow:2px 0 8px rgba(0,0,0,.08);
+}
+
+.sidebar a{
+display:block;
+padding:16px 25px;
+text-decoration:none;
+color:#333;
+font-size:18px;
+}
+
+.sidebar a:hover{
+background:#eef4ff;
+color:#0066ff;
+}
+
+.main{
+margin-left:240px;
+margin-top:90px;
+padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+gap:20px;
+}
+  .video{
+background:#fff;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+transition:.3s;
+cursor:pointer;
+}
+
+.video:hover{
+transform:translateY(-5px);
+}
+
+.thumb{
+height:180px;
+background:linear-gradient(135deg,#0066ff,#4da3ff);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
 color:#fff;
-box-shadow:0 15px 35px rgba(0,102,255,.3);
+font-weight:bold;
+}
+
+.info{
+padding:15px;
+}
+
+.title{
+font-size:18px;
+font-weight:bold;
+margin-bottom:8px;
+}
+
+.channel{
+color:#666;
+font-size:14px;
+margin-bottom:5px;
+}
+
+.views{
+color:#888;
+font-size:13px;
+}
+
+@media(max-width:900px){
+
+.sidebar{
+width:70px;
+}
+
+.sidebar a{
+font-size:0;
+padding:20px;
+}
+
+.main{
+margin-left:90px;
+}
+
+.search{
+width:60%;
+}
+
+}
+
+@media(max-width:600px){
+
+.sidebar{
+display:none;
+}
+
+.main{
+margin-left:0;
+}
+
+.search{
+width:55%;
+}
+
+.logo{
+font-size:24px;
+}
+
 }
 </style>
 </head>
+
 <body>
-<div class="logo">Z</div>
+
+<header>
+
+<div class="logo">ZOON</div>
+
+<div class="search">
+<input type="text" placeholder="Search videos">
+<button>Search</button>
+</div>
+
+<div class="login">Login</div>
+
+</header>
+<div class="sidebar">
+<a href="#">🏠 Home</a>
+<a href="#">🎬 Shorts</a>
+<a href="#">📺 Subscriptions</a>
+<a href="#">🔥 Trending</a>
+<a href="#">🎥 Library</a>
+<a href="#">⏰ History</a>
+<a href="#">👍 Liked Videos</a>
+<a href="#">⚙ Settings</a>
+</div>
+
+<div class="main">
+
+<div class="video">
+<div class="thumb">▶</div>
+<div class="info">
+<div class="title">Welcome to ZOON</div>
+<div class="channel">ZOON Official</div>
+<div class="views">1.2M views • 2 days ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🎮</div>
+<div class="info">
+<div class="title">Gaming Highlights</div>
+<div class="channel">Gaming Hub</div>
+<div class="views">950K views • 1 week ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🎵</div>
+<div class="info">
+<div class="title">Top Music 2026</div>
+<div class="channel">Music World</div>
+<div class="views">2.8M views • 3 days ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🎬</div>
+<div class="info">
+<div class="title">Latest Movies</div>
+<div class="channel">Movie Zone</div>
+<div class="views">650K views • Today</div>
+</div>
+</div>
+<div class="video">
+<div class="thumb">⚽</div>
+<div class="info">
+<div class="title">Football Highlights</div>
+<div class="channel">Sports Live</div>
+<div class="views">3.4M views • Yesterday</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">📱</div>
+<div class="info">
+<div class="title">Latest Tech Review</div>
+<div class="channel">Tech World</div>
+<div class="views">780K views • 5 days ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">😂</div>
+<div class="info">
+<div class="title">Funny Moments</div>
+<div class="channel">Comedy Club</div>
+<div class="views">5.1M views • 1 day ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🚗</div>
+<div class="info">
+<div class="title">Luxury Cars 2026</div>
+<div class="channel">Auto World</div>
+<div class="views">1.1M views • 6 days ago</div>
+</div>
+  <div class="video">
+<div class="thumb">📚</div>
+<div class="info">
+<div class="title">Learn Programming</div>
+<div class="channel">Code Academy</div>
+<div class="views">870K views • 2 days ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🍳</div>
+<div class="info">
+<div class="title">Easy Cooking Recipes</div>
+<div class="channel">Kitchen Master</div>
+<div class="views">420K views • 4 days ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">✈️</div>
+<div class="info">
+<div class="title">World Travel Vlog</div>
+<div class="channel">Travel Time</div>
+<div class="views">1.9M views • 1 week ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">💡</div>
+<div class="info">
+<div class="title">Amazing Life Hacks</div>
+<div class="channel">Smart Ideas</div>
+<div class="views">2.3M views • 3 days ago</div>
+</div>
+</div>
+  
+             <div class="video">
+<div class="thumb">🎮</div>
+<div class="info">
+<div class="title">Free Fire Pro Gameplay</div>
+<div class="channel">Gaming Zone</div>
+<div class="views">8.2M views • 5 hours ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🎤</div>
+<div class="info">
+<div class="title">Live Music Concert</div>
+<div class="channel">Music Live</div>
+<div class="views">4.5M views • Today</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">📷</div>
+<div class="info">
+<div class="title">Photography Tips</div>
+<div class="channel">Photo Master</div>
+<div class="views">690K views • 2 weeks ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🏋️</div>
+<div class="info">
+<div class="title">Fitness Workout</div>
+<div class="channel">Health Plus</div>
+<div class="views">1.7M views • 3 days ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🧠</div>
+<div class="info">
+<div class="title">AI Technology Explained</div>
+<div class="channel">Tech Future</div>
+<div class="views">3.8M views • 6 days ago</div>
+</div>
+</div>
+</div>
+<div class="video">
+<div class="thumb">🎓</div>
+<div class="info">
+<div class="title">Online Study Class</div>
+<div class="channel">Education Hub</div>
+<div class="views">980K views • 2 days ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">💻</div>
+<div class="info">
+<div class="title">Laptop Review 2026</div>
+<div class="channel">Tech Review</div>
+<div class="views">1.4M views • Yesterday</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🍔</div>
+<div class="info">
+<div class="title">Street Food Tour</div>
+<div class="channel">Food Lovers</div>
+<div class="views">2.6M views • 5 days ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🐱</div>
+<div class="info">
+<div class="title">Cute Animals Compilation</div>
+<div class="channel">Animal World</div>
+<div class="views">9.8M views • 1 week ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🌍</div>
+<div class="info">
+<div class="title">World News Today</div>
+<div class="channel">Global News</div>
+<div class="views">730K views • Today</div>
+</div>
+</div>
+<div class="video">
+<div class="thumb">🚀</div>
+<div class="info">
+<div class="title">Space Exploration</div>
+<div class="channel">Science World</div>
+<div class="views">1.9M views • 2 days ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🎨</div>
+<div class="info">
+<div class="title">Graphic Design Tutorial</div>
+<div class="channel">Creative Studio</div>
+<div class="views">560K views • 4 days ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🎧</div>
+<div class="info">
+<div class="title">Top Songs Playlist</div>
+<div class="channel">Music Beats</div>
+<div class="views">6.3M views • Today</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🏏</div>
+<div class="info">
+<div class="title">Cricket Highlights</div>
+<div class="channel">Sports TV</div>
+<div class="views">3.1M views • Yesterday</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">💼</div>
+<div class="info">
+<div class="title">Business Success Tips</div>
+<div class="channel">Business Pro</div>
+<div class="views">820K views • 1 week ago</div>
+</div>
+</div>
+<div class="video">
+<div class="thumb">🛒</div>
+<div class="info">
+<div class="title">Online Shopping Deals</div>
+<div class="channel">Shop World</div>
+<div class="views">540K views • Today</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🚴</div>
+<div class="info">
+<div class="title">Cycling Adventure</div>
+<div class="channel">Adventure Life</div>
+<div class="views">780K views • 2 days ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🎯</div>
+<div class="info">
+<div class="title">Best Gaming Tips</div>
+<div class="channel">Pro Gamer</div>
+<div class="views">4.7M views • 1 day ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">📖</div>
+<div class="info">
+<div class="title">Motivational Stories</div>
+<div class="channel">Success Hub</div>
+<div class="views">1.5M views • 3 days ago</div>
+</div>
+</div>
+
+<div class="video">
+<div class="thumb">🌟</div>
+<div class="info">
+<div class="title">Trending Videos</div>
+<div class="channel">ZOON Trending</div>
+<div class="views">12.4M views • Live</div>
+</div>
+</div>
+</div>
+
+<footer style="text-align:center;padding:30px;background:#fff;margin-top:30px;color:#666;">
+  © 2026 ZOON — Watch, Share & Discover Videos Worldwide
+</footer>
+
 </body>
 </html>
